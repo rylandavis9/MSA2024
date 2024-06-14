@@ -1,7 +1,7 @@
 def main():
   #list demo
   #create a list of string names
-  names = ['rylan', 'allie', 'lincol,n', 'kian']
+  names = ['rylan', 'allie', 'lincoln', 'kian']
   list_of_integers = [1, 2, 3, 4, 7, 10, 123, 457, 45, 1]
   random_type_list = ['noah', 15, 22.6, 'joe']
 
