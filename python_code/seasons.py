@@ -25,7 +25,7 @@ def main():
   while True:
     season = return_season()
     print(f'\nIt is {season}\n')
-
+    
     run_again = input('would you like to run again? y or Y: ')
     if run_again == 'y' or run_again == 'Y':
       continue
