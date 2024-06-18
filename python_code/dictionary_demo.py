@@ -25,7 +25,7 @@ def main():
 
     #declare car dictionary
     car = {
-        'make': 'Porsche', 'model': "911 GT3RS", "year": 2023, "value": 330000, 'engine': 4.0, 'horsepower': 502
+        'make': 'Porsche', 'model': '911 GT3RS', 'year': 2023, 'value': 330000, 'engine': 4.0, 'horsepower': 502
     }
     #get values from car dictionary
     print('\n')
@@ -34,4 +34,4 @@ def main():
 
 
 
-main()
+main() 
