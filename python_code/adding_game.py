@@ -35,14 +35,14 @@ def level_1():
     answer = 0
     total_questions = 0
     correct_answers = 0
+    problem_number = get_num_of_problems()
+    value_one = [random.randint(0, 9), random.randint(0, 9), random.randint(0, 9), random.randint(0, 9), random.randint(0, 9), random.randint(0, 9), random.randint(0, 9), random.randint(0, 9), random.randint(0, 9), random.randint(0, 9)]
+    value_two = [random.randint(0, 9), random.randint(0, 9), random.randint(0, 9), random.randint(0, 9), random.randint(0, 9), random.randint(0, 9), random.randint(0, 9), random.randint(0, 9), random.randint(0, 9), random.randint(0, 9)]
     while True:
-        problem_number = get_num_of_problems()
-        value_one = random.randint(0, 9)
-        value_two = random.randint(0, 9)
         try:
             if total_questions != problem_number:
-                answer = value_one + value_two
-                user_answer = int(input(f'What is the answer to {value_one} + {value_two}:'))
+                answer = value_one[total_questions] + value_two[total_questions]
+                user_answer = int(input(f'What is the answer to {value_one[total_questions]} + {value_two[total_questions]}:'))
                 if user_answer == answer:
                     print('CORRECT!!!')
                     total_questions += 1
@@ -51,71 +51,111 @@ def level_1():
                 elif user_answer != answer:
                     strikes += 1
                     print('WRONG!!!')
-                    if strikes == 3:
+                    if strikes >= 3:
                         print(f'The answer was {answer}')
                         strikes = 0
                         total_questions += 1
-                        
+                continue
+            else:
+                level_ans = correct_answers / total_questions
+                output = f'You did {total_questions} and got {correct_answers} correct. \n That is {(level_ans * 100):.2f}%'
         except:
+            print('ERROR: please enter an integer')
+            strikes +=1
+            if strikes >= 3:
+                print(f'The answer was {answer}')
+                strikes = 0
+                total_questions += 1
             continue
-        return correct_answers 
+        return output 
 #change the numbers for level 2 but keep everything else the same
 def level_2():
     strikes = 0
     answer = 0
+    total_questions = 0
+    correct_answers = 0
+    problem_number = get_num_of_problems()
+    value_one = [random.randint(10, 99), random.randint(10, 99), random.randint(10, 99), random.randint(10, 99), random.randint(10, 99), random.randint(10, 99), random.randint(10, 99), random.randint(10, 99), random.randint(10, 99), random.randint(10, 99)]
+    value_two = [random.randint(10, 99), random.randint(10, 99), random.randint(10, 99), random.randint(10, 99), random.randint(10, 99), random.randint(10, 99), random.randint(10, 99), random.randint(10, 99), random.randint(10, 99), random.randint(10, 99)]
     while True:
-        problem_number = get_num_of_problems()
-        value_one = random.randint(10, 99)
-        value_two = random.randint(10, 99)
         try:
-            for i in range(problem_number):
-                answer = value_one + value_two
-                user_answer = int(input(f'What is the answer to {value_one} + {value_two}:'))
+            if total_questions != problem_number:
+                answer = value_one[total_questions] + value_two[total_questions]
+                user_answer = int(input(f'What is the answer to {value_one[total_questions]} + {value_two[total_questions]}:'))
                 if user_answer == answer:
                     print('CORRECT!!!')
+                    total_questions += 1
+                    correct_answers += 1
                     continue
                 elif user_answer != answer:
                     strikes += 1
                     print('WRONG!!!')
-                    if strikes == 3:
+                    if strikes >= 3:
                         print(f'The answer was {answer}')
                         strikes = 0
+                        total_questions += 1
+                continue
+            else:
+                level_ans = correct_answers / total_questions
+                output = f'You did {total_questions} and got {correct_answers} correct. \n That is {(level_ans * 100):.2f}%'
         except:
+            print('ERROR: please enter an integer')
+            strikes +=1
+            if strikes >= 3:
+                print(f'The answer was {answer}')
+                strikes = 0
+                total_questions += 1
             continue
-        return answer
+        return output 
 #change the numbers for level 2 but keep everything else the same
 def level_3():
     strikes = 0
     answer = 0
+    total_questions = 0
+    correct_answers = 0
+    problem_number = get_num_of_problems()
+    value_one = [random.randint(100, 999), random.randint(100, 999), random.randint(100, 999), random.randint(100, 999), random.randint(100, 999), random.randint(100, 999), random.randint(100, 999), random.randint(100, 999), random.randint(100, 999), random.randint(100, 999)]
+    value_two = [random.randint(100, 999), random.randint(100, 999), random.randint(100, 999), random.randint(100, 999), random.randint(100, 999), random.randint(100, 999), random.randint(100, 999), random.randint(100, 999), random.randint(100, 999), random.randint(100, 999)]
     while True:
-        problem_number = get_num_of_problems()
-        value_one = random.randint(100, 999)
-        value_two = random.randint(100, 999)
         try:
-            for i in range(problem_number):
-                answer = value_one + value_two
-                user_answer = int(input(f'What is the answer to {value_one} + {value_two}:'))
+            if total_questions != problem_number:
+                answer = value_one[total_questions] + value_two[total_questions]
+                user_answer = int(input(f'What is the answer to {value_one[total_questions]} + {value_two[total_questions]}:'))
                 if user_answer == answer:
                     print('CORRECT!!!')
+                    total_questions += 1
+                    correct_answers += 1
                     continue
                 elif user_answer != answer:
                     strikes += 1
                     print('WRONG!!!')
-                    if strikes == 3:
+                    if strikes >= 3:
                         print(f'The answer was {answer}')
                         strikes = 0
+                        total_questions += 1
+                continue
+            else:
+                level_ans = correct_answers / total_questions
+                output = f'You did {total_questions} and got {correct_answers} correct. \n That is {(level_ans * 100):.2f}%'
         except:
+            print('ERROR: please enter an integer')
+            strikes +=1
+            if strikes >= 3:
+                print(f'The answer was {answer}')
+                strikes = 0
+                total_questions += 1
             continue
-        return answer
+        return output 
 
 def main():
     while True:
         level = get_game_level()
         if level == 1:
-            level1 = level_1()
+            level_ans = level_1()
         elif  level == 2:
-            level2 = level_2()
+            level_ans = level_2()
         elif level == 3:
-            level3 = level_3()
+            level_ans = level_3()
+        print(level_ans)
 
 main()
