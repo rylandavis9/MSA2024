@@ -27,4 +27,4 @@ def index():
 def api_all():
     return jsonify(student_dictionaries)
 
-app.run(port=5010)
+app.run(port=5000)
